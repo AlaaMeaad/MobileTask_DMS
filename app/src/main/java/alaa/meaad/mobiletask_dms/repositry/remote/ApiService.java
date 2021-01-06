@@ -5,6 +5,7 @@ package alaa.meaad.mobiletask_dms.repositry.remote;
 import java.util.HashMap;
 
 import alaa.meaad.mobiletask_dms.repositry.model.home.Home;
+import alaa.meaad.mobiletask_dms.repositry.model.profile.Profile;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -22,4 +23,6 @@ public interface ApiService {
     @GET("home")
     Call<Home> getHome();
 
+    @GET("profile")
+    Call<Profile> getProfile();
 }

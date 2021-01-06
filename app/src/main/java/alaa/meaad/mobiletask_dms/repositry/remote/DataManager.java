@@ -9,4 +9,5 @@ public interface DataManager {
 
 
     void  getHome (RetrofitCallback callback );
+    void  getProfile(RetrofitCallback callback);
 }

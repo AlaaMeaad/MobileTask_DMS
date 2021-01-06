@@ -52,7 +52,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
     private void setData(ViewHolder holder, int position) {
 
-        holder.articlesAdapterTvTitle.setText(postDataList.get(position).getTitle());
+//        holder.articlesAdapterTvTitle.setText(postDataList.get(position).getTitle());
         HelperMethod.onLoadImageFromUrl(holder.articlesAdapterIvPostImage, postDataList.get(position).getImage(), activity);
 
     }
@@ -69,8 +69,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
         private View view;
 
-        @BindView(R.id.articles_adapter_tv_title)
-        TextView articlesAdapterTvTitle;
+//        @BindView(R.id.articles_adapter_tv_title)
+//        TextView articlesAdapterTvTitle;
         @BindView(R.id.articles_adapter_iv_post_image)
         ImageView articlesAdapterIvPostImage;
 

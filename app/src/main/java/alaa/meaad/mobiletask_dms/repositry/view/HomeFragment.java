@@ -11,7 +11,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.omadahealth.github.swipyrefreshlayout.library.SwipyRefreshLayout;
 import com.omadahealth.github.swipyrefreshlayout.library.SwipyRefreshLayoutDirection;
 
@@ -22,12 +30,14 @@ import java.util.List;
 import alaa.meaad.mobiletask_dms.R;
 import alaa.meaad.mobiletask_dms.repositry.model.home.DataHome;
 import alaa.meaad.mobiletask_dms.repositry.model.home.Home;
+import alaa.meaad.mobiletask_dms.repositry.model.profile.Profile;
 import alaa.meaad.mobiletask_dms.repositry.remote.ApiService;
 import alaa.meaad.mobiletask_dms.repositry.remote.DataManager;
 import alaa.meaad.mobiletask_dms.repositry.remote.DataManagerImpl;
 import alaa.meaad.mobiletask_dms.repositry.remote.HelperMethod;
 import alaa.meaad.mobiletask_dms.repositry.remote.RetrofitCallback;
 import butterknife.BindView;
+import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -56,6 +66,9 @@ public class HomeFragment extends Fragment {
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     private int currentPage = 1;
     private DataManagerImpl dataManager;
+    CircleImageView circleImageView;
+    View mRootView;
+    TextView tv_name, tv_city , tv_bio;
 
 
 
@@ -75,10 +88,14 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View mRootView = inflater.inflate(R.layout.fragment_home, container, false);
+         mRootView = inflater.inflate(R.layout.fragment_home, container, false);
         postsFragmentRvPosts = mRootView.findViewById(R.id.posts_fragment_rv_posts);
-
+        circleImageView = mRootView.findViewById(R.id.iv_image);
+        tv_city = mRootView.findViewById(R.id.city);
+        tv_name = mRootView.findViewById(R.id.tv_name);
+        tv_bio = mRootView.findViewById(R.id.bio);
         dataManager = new DataManagerImpl();
+        getprofile();
 
 initRecyclerView();
         return mRootView;
@@ -95,7 +112,37 @@ initRecyclerView();
     }
 
 
+    private void getprofile() {
+//        HelperMethod.showProgressDialog(getActivity(), "جارى التحميل");
+        dataManager.getProfile(new RetrofitCallback() {
+            @Override
+            public void onSuccess(Object response) {
+                Profile profile = (Profile) response;
+                tv_name.setText(profile.getData().getFullName());
+                HelperMethod.onLoadImageFromUrl(circleImageView, profile.getData().getProfilePicture(), getContext());
+                tv_bio.setText(profile.getData().getBio());
+                tv_city.setText(profile.getData().getLocation());
 
+
+
+
+
+
+
+
+        }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onErrorCode(Response<Object> response) {
+
+            } });
+
+    }
 
 
             private void getAllProperty() {
@@ -131,6 +178,44 @@ initRecyclerView();
                     }
                 });
             }
+
+
+
+
+
+//    private void getProfile() {
+////        HelperMethod.showProgressDialog(getActivity(), "جارى التحميل");
+//        dataManager.getProfile(new RetrofitCallback() {
+//            @Override
+//            public void onSuccess(Object response) {
+//                HelperMethod.dismissProgressDialog();
+//                Profile profile = (Profile) response;
+//
+//                    Toast.makeText(getContext() , "dfdfdf" , Toast.LENGTH_LONG).show();
+//                    tv_name.setText(profile.getData().getFullName());
+////                    HelperMethod.onLoadImageFromUrl(circleImageView, profile.getData().getProfilePicture(), getContext());
+//
+//
+//
+//            }
+//
+//            @Override
+//            public void onError(Throwable throwable) {
+//                HelperMethod.dismissProgressDialog();
+//                Log.w("error", throwable.getMessage());
+//                Toast.makeText(getContext() , "2225" , Toast.LENGTH_LONG).show();
+//
+//            }
+//
+//            @Override
+//            public void onErrorCode(Response<Object> response) {
+//                HelperMethod.dismissProgressDialog();
+//                Toast.makeText(getContext() , "6666666" , Toast.LENGTH_LONG).show();
+//
+//                Log.w("error", "here**");
+//            }
+//        });
+//    }
 
 
 
