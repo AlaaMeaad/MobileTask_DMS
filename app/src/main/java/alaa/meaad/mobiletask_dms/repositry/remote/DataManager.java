@@ -8,5 +8,5 @@ import okhttp3.RequestBody;
 public interface DataManager {
 
 
-    void  contact(RetrofitCallback callback );
+    void  getHome (RetrofitCallback callback );
 }

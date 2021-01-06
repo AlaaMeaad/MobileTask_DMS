@@ -54,11 +54,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
         holder.articlesAdapterTvTitle.setText(postDataList.get(position).getTitle());
         HelperMethod.onLoadImageFromUrl(holder.articlesAdapterIvPostImage, postDataList.get(position).getImage(), activity);
-        /*if (postDataList.get(position).getIsFavourite()) {
-            holder.articlesAdapterIvFavourites.setImageResource(R.drawable.solidheart);
-        } else {
-            holder.articlesAdapterIvFavourites.setImageResource(R.drawable.lightheart);
-        }*/
 
     }
 

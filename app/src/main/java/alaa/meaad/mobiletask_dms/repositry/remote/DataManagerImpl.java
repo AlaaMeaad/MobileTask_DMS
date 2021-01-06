@@ -19,7 +19,7 @@ public class DataManagerImpl implements DataManager {
 
 
     @Override
-    public void contact(RetrofitCallback callback) {
+    public void getHome(RetrofitCallback callback) {
         Call<Home> call = apiService.getHome();
         call.enqueue(new Callback<Home>() {
             @Override
@@ -33,4 +33,6 @@ public class DataManagerImpl implements DataManager {
             }
         });
     }
+
+
 }
