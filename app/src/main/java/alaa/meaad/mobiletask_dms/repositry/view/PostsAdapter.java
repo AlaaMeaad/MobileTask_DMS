@@ -57,21 +57,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
     }
 
-   /* private void setAction(ViewHolder holder, int position) {
 
-        holder.articlesAdapterIvFavourites.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                postDataList.get(position).setIsFavourite(!postDataList.get(position).getIsFavourite());
-                if (postDataList.get(position).getIsFavourite()) {
-                    holder.articlesAdapterIvFavourites.setImageResource(R.drawable.solidheart);
-                } else {
-                    holder.articlesAdapterIvFavourites.setImageResource(R.drawable.lightheart);
-                }
-            }
-        });
-
-    }*/
 
     @Override
     public int getItemCount() {
@@ -81,13 +67,14 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        private View view;
 
         @BindView(R.id.articles_adapter_tv_title)
         TextView articlesAdapterTvTitle;
         @BindView(R.id.articles_adapter_iv_post_image)
         ImageView articlesAdapterIvPostImage;
 
-        private View view;
+
 
         public ViewHolder(View itemview) {
             super(itemview);
