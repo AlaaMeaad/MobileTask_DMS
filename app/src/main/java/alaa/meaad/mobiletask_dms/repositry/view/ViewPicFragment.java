@@ -78,7 +78,6 @@ public class ViewPicFragment extends BaseFragment {
 
     @Override
     public void onBack() {
-//        HelperMethod.ReplaceFragment(new HomeFragment() , getFragmentManager() , R.id.activity_main, null ,null);
     super.onBack();
     }
 }

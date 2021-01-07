@@ -3,14 +3,13 @@
         android:layout_width="@dimen/_90sdp"
         android:layout_height="@dimen/_100sdp"
     android:layout_margin="@dimen/_6sdp"
-        android:background="@drawable/shape_post"
+        android:background="@drawable/shape_follow"
         android:orientation="vertical"
         >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/shape_post"
 
             >
 
@@ -19,7 +18,7 @@
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_100sdp"
                 android:layoutDirection="rtl"
-                android:scaleType="fitXY"
+                android:src="@drawable/shape_follow"
                 android:padding="@dimen/_2sdp"
                 android:radius="10dp"
                 />

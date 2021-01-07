@@ -37,6 +37,7 @@ import alaa.meaad.mobiletask_dms.repositry.remote.DataManager;
 import alaa.meaad.mobiletask_dms.repositry.remote.DataManagerImpl;
 import alaa.meaad.mobiletask_dms.repositry.remote.HelperMethod;
 import alaa.meaad.mobiletask_dms.repositry.remote.RetrofitCallback;
+import alaa.meaad.mobiletask_dms.repositry.view.base.BaseFragment;
 import butterknife.BindView;
 import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
@@ -51,7 +52,7 @@ import static com.google.android.gms.location.ActivityRecognition.getClient;
  * A simple {@link Fragment} subclass.
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment implements PostsAdapter.PostsAdapterListener , View.OnClickListener {
+public class HomeFragment extends BaseFragment implements PostsAdapter.PostsAdapterListener , View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -103,7 +104,7 @@ public class HomeFragment extends Fragment implements PostsAdapter.PostsAdapterL
         tv_following = mRootView.findViewById(R.id.tv_folowing);
         tv_folowes = mRootView.findViewById(R.id.tv_followers);
         dataManager = new DataManagerImpl();
-
+//        toolbar = mRootView.findViewById(R.id.toolbar);
         getprofile();
 
 initRecyclerView();
@@ -237,7 +238,12 @@ initRecyclerView();
 //            }
 //        });
 //    }
+@Override
+public void onBack() {
 
+
+    super.onBack();
+}
 
 
 }

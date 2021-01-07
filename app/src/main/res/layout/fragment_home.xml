@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".repositry.view.HomeFragment"
     android:id="@+id/fragmenthome"
+    android:layoutDirection="ltr"
     android:background="@color/whit">
 
     <!-- TODO: Update blank fragment layout -->
@@ -16,6 +17,7 @@
         android:layout_height="@dimen/_220sdp"
         android:id="@+id/tv_profile"
 
+
         >
 
 
@@ -23,7 +25,7 @@
             android:id="@+id/iv_image"
             android:layout_width="@dimen/_120sdp"
             android:layout_height="@dimen/_120sdp"
-            android:layout_margin="@dimen/_16sdp"
+            android:layout_margin="@dimen/_14sdp"
             android:src="@color/colorPrimaryDark"
             />
         <TextView
@@ -33,9 +35,10 @@
             android:hint="Alaa"
             android:layout_marginTop="@dimen/_35sdp"
             android:textSize="22dp"
+            android:layout_marginRight="@dimen/_6sdp"
             android:layout_toRightOf="@id/iv_image"
             android:textColor="@color/black"
-        />
+            />
         <TextView
             android:layout_width="@dimen/_100sdp"
             android:layout_height="wrap_content"
@@ -110,7 +113,7 @@
                 android:layout_marginTop="@dimen/_3sdp"
                 android:id="@+id/folowing"
                 android:layout_below="@id/tv_post"
-                android:text="folowing"
+                android:text="following"
                 android:layout_toRightOf="@id/followers"
                 android:layout_marginLeft="@dimen/_8sdp"
                 android:textSize="@dimen/_14ssp"
