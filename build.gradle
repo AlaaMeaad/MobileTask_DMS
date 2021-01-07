@@ -24,4 +24,6 @@ task clean(type: Delete) {
 }
 ext{
     gson_vrb = '2.3.0'
+    intuit = '1.0.6'
+
 }
