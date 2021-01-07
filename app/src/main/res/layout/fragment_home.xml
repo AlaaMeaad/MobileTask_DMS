@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".repositry.view.HomeFragment"
     android:id="@+id/fragmenthome"
-    android:background="@color/white1">
+    android:background="@color/whit">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -40,12 +40,15 @@
             android:id="@+id/city"
             android:layout_below="@id/tv_name"
             android:layout_toRightOf="@id/iv_image"
+            android:textColor="@color/white3"
             android:textSize="18dp"
             android:layout_marginTop="6dp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bio"
+            android:textColor="@color/white3"
+
             android:layout_below="@id/city"
             android:layout_toRightOf="@id/iv_image"
             android:layout_marginTop="10dp"
@@ -82,10 +85,11 @@
                 android:layout_marginLeft="9dp"
                 android:gravity="center"
                 android:textSize="20sp"
+                android:textColor="@color/white3"
                 android:layout_toRightOf="@id/tv_post"
                 />
             <TextView
-                android:layout_width="70dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:id="@+id/tv_folowing"
@@ -97,6 +101,8 @@
                 />
             <TextView
                 android:layout_width="100dp"
+                android:textColor="@color/white3"
+
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:id="@+id/folowing"
@@ -107,7 +113,7 @@
                 android:textSize="20sp"
                 />
             <TextView
-                android:layout_width="50dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:id="@+id/tv_post"
@@ -117,13 +123,16 @@
                 android:textColor="@color/black"
                 />
             <TextView
-                android:layout_width="55dp"
+                android:layout_width="100dp"
+                android:textColor="@color/white3"
+
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:id="@+id/post"
                 android:layout_below="@id/tv_post"
                 android:text="Posts"
                 android:layout_marginLeft="20dp"
+                android:gravity="center"
                 android:textSize="20sp"
                 />
             
