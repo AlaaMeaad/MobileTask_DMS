@@ -95,7 +95,7 @@ public class HomeFragment extends BaseFragment implements PostsAdapter.PostsAdap
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
          mRootView = inflater.inflate(R.layout.fragment_home, container, false);
-        postsFragmentRvPosts = mRootView.findViewById(R.id.posts_fragment_rv_posts);
+//        postsFragmentRvPosts = mRootView.findViewById(R.id.posts_fragment_rv_posts);
         circleImageView = mRootView.findViewById(R.id.iv_image);
         tv_city = mRootView.findViewById(R.id.city);
         tv_bio = mRootView.findViewById(R.id.bio);
@@ -107,7 +107,7 @@ public class HomeFragment extends BaseFragment implements PostsAdapter.PostsAdap
 //        toolbar = mRootView.findViewById(R.id.toolbar);
         getprofile();
 
-initRecyclerView();
+//initRecyclerView();
         return mRootView;
 
     }
