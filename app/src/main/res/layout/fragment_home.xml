@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".repositry.view.HomeFragment"
-    android:id="@+id/fragmenthome">
+    android:id="@+id/fragmenthome"
+    android:background="@color/white1">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -52,7 +53,81 @@
             android:layout_marginRight="30dp"/>
 
 
-
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@id/bio"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/shape_follow"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:id="@+id/tv_followers"
+                android:textSize="20sp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/tv_post"
+                android:gravity="center"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:id="@+id/followers"
+                android:layout_below="@id/tv_followers"
+                android:text="Followers"
+                android:layout_marginLeft="9dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/tv_post"
+                />
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:id="@+id/tv_folowing"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/followers"
+                android:layout_marginLeft="9dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:id="@+id/folowing"
+                android:layout_below="@id/tv_post"
+                android:text="folowing"
+                android:layout_toRightOf="@id/followers"
+                android:layout_marginLeft="9dp"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:id="@+id/tv_post"
+                android:textSize="20sp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:id="@+id/post"
+                android:layout_below="@id/tv_post"
+                android:text="Posts"
+                android:layout_marginLeft="20dp"
+                android:textSize="20sp"
+                />
+            
+        </RelativeLayout>
     </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@+id/tv_profile"
@@ -63,5 +138,6 @@
         android:layout_marginStart="6dp"
         android:layout_marginTop="6dp"
         />
+
 
 </RelativeLayout>

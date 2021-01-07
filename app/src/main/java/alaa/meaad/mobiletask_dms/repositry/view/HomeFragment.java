@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment {
     private DataManagerImpl dataManager;
     CircleImageView circleImageView;
     View mRootView;
-    TextView tv_name, tv_city , tv_bio;
+    TextView tv_name, tv_city , tv_bio , tv_post , tv_folowes , tv_following;
 
 
 
@@ -92,8 +92,11 @@ public class HomeFragment extends Fragment {
         postsFragmentRvPosts = mRootView.findViewById(R.id.posts_fragment_rv_posts);
         circleImageView = mRootView.findViewById(R.id.iv_image);
         tv_city = mRootView.findViewById(R.id.city);
-        tv_name = mRootView.findViewById(R.id.tv_name);
         tv_bio = mRootView.findViewById(R.id.bio);
+        tv_name = mRootView.findViewById(R.id.tv_name);
+        tv_post = mRootView.findViewById(R.id.tv_post);
+        tv_following = mRootView.findViewById(R.id.tv_folowing);
+        tv_folowes = mRootView.findViewById(R.id.tv_followers);
         dataManager = new DataManagerImpl();
         getprofile();
 
@@ -122,7 +125,8 @@ initRecyclerView();
                 HelperMethod.onLoadImageFromUrl(circleImageView, profile.getData().getProfilePicture(), getContext());
                 tv_bio.setText(profile.getData().getBio());
                 tv_city.setText(profile.getData().getLocation());
-
+                tv_post.setText(profile.getData().getPosts());
+                tv_following.setText(profile.getData().getFollowing());
 
 
 
