@@ -48,6 +48,7 @@ public class DataManagerImpl implements DataManager {
 
             @Override
             public void onFailure(Call<Profile> call, Throwable t) {
+                callback.onError(t);
 
             }
         });

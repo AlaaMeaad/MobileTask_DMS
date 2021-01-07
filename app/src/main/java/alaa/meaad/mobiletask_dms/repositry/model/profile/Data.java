@@ -26,39 +26,7 @@ public class Data {
     private Counts counts;
 
 
-    @SerializedName("posts")
-    @Expose
-    private Integer posts;
-    @SerializedName("followers")
-    @Expose
-    private Integer followers;
-    @SerializedName("following")
-    @Expose
-    private Integer following;
 
-    public Integer getPosts() {
-        return posts;
-    }
-
-    public void setPosts(Integer posts) {
-        this.posts = posts;
-    }
-
-    public Integer getFollowers() {
-        return followers;
-    }
-
-    public void setFollowers(Integer followers) {
-        this.followers = followers;
-    }
-
-    public Integer getFollowing() {
-        return following;
-    }
-
-    public void setFollowing(Integer following) {
-        this.following = following;
-    }
 
 
     public Integer getId() {

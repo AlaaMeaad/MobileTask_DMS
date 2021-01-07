@@ -125,13 +125,9 @@ initRecyclerView();
                 HelperMethod.onLoadImageFromUrl(circleImageView, profile.getData().getProfilePicture(), getContext());
                 tv_bio.setText(profile.getData().getBio());
                 tv_city.setText(profile.getData().getLocation());
-                tv_post.setText(profile.getData().getPosts());
-                tv_following.setText(profile.getData().getFollowing());
-
-
-
-
-
+                tv_post.setText(profile.getData().getCounts().getPosts().toString());
+                tv_folowes.setText(profile.getData().getCounts().getFollowers().toString());
+                tv_following.setText(profile.getData().getCounts().getFollowing().toString());
 
 
         }
