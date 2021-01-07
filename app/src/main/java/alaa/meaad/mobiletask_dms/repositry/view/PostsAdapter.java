@@ -29,12 +29,15 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
     private Activity activity;
     private Context context;
+    private PostsAdapterListener mPostsAdapterListener;
+
     private List<DataHome> postDataList = new ArrayList<>();
 
-    public PostsAdapter(Activity activity, Context context, List<DataHome> postDataList) {
+    public PostsAdapter(Activity activity, Context context, List<DataHome> postDataList ,PostsAdapterListener mPostsAdapterListener ) {
         this.activity = activity;
         this.context = context;
         this.postDataList = postDataList;
+        this.mPostsAdapterListener = mPostsAdapterListener;
     }
 
     @NonNull
@@ -76,10 +79,20 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
 
 
 
+
         public ViewHolder(View itemview) {
             super(itemview);
             view = itemview;
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mPostsAdapterListener.onClickItem(getAdapterPosition(), postDataList.get(getAdapterPosition()).getImage());
+                }
+            });
             ButterKnife.bind(this, view);
         }
+    }
+    public interface PostsAdapterListener{
+        void onClickItem( int position , String id);
     }
 }

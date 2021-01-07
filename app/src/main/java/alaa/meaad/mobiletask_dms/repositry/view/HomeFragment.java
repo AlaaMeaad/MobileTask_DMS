@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -42,6 +43,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static alaa.meaad.mobiletask_dms.repositry.remote.HelperMethod.ReplaceFragment;
 import static alaa.meaad.mobiletask_dms.repositry.remote.HelperMethod.dismissProgressDialog;
 import static com.google.android.gms.location.ActivityRecognition.getClient;
 
@@ -49,7 +51,7 @@ import static com.google.android.gms.location.ActivityRecognition.getClient;
  * A simple {@link Fragment} subclass.
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements PostsAdapter.PostsAdapterListener , View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -69,6 +71,8 @@ public class HomeFragment extends Fragment {
     CircleImageView circleImageView;
     View mRootView;
     TextView tv_name, tv_city , tv_bio , tv_post , tv_folowes , tv_following;
+    public String url ;
+    Toolbar toolbar ;
 
 
 
@@ -81,6 +85,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
     }
 
@@ -98,6 +103,7 @@ public class HomeFragment extends Fragment {
         tv_following = mRootView.findViewById(R.id.tv_folowing);
         tv_folowes = mRootView.findViewById(R.id.tv_followers);
         dataManager = new DataManagerImpl();
+
         getprofile();
 
 initRecyclerView();
@@ -108,7 +114,7 @@ initRecyclerView();
 //        linearLayoutManager = new LinearLayoutManager(getActivity());
         GridLayoutManager gridLayoutManager=new GridLayoutManager(getActivity() , 3);
         postsFragmentRvPosts.setLayoutManager(gridLayoutManager);
-        postAdapter = new PostsAdapter(getActivity(), getActivity(), postHome);
+        postAdapter = new PostsAdapter(getActivity(), getActivity(), postHome , this);
         postsFragmentRvPosts.setAdapter(postAdapter);
         getAllProperty();
 
@@ -179,8 +185,23 @@ initRecyclerView();
                 });
             }
 
+    @Override
+    public void onClickItem(int position, String id) {
+//        ReplaceFragment(new ViewPicFragment() , getFragmentManager() , R.id.activity_main, null ,null);
+//        Toast.makeText(getContext() , "kkkkkk" + id , Toast.LENGTH_LONG).show();
+//        url = id;
+        ViewPicFragment actavite =
+                new ViewPicFragment();
+        Bundle b = new Bundle();
+        b.putString("url", id);
+        actavite.setArguments(b);
+        ReplaceFragment(actavite, getActivity().getSupportFragmentManager(), R.id.activity_main, null, null);
+    }
 
+    @Override
+    public void onClick(View v) {
 
+    }
 
 
 //    private void getProfile() {
