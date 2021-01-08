@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_3sdp"
                     android:id="@+id/tv_followers"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_16ssp"
 
                     android:layout_marginLeft="@dimen/_18sdp"
                     android:layout_toRightOf="@id/tv_post"
@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_3sdp"
                     android:id="@+id/tv_folowing"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_16ssp"
                     android:layout_toRightOf="@id/followers"
                     android:layout_marginLeft="@dimen/_8sdp"
                     android:gravity="center"
@@ -79,17 +79,17 @@
                     android:textSize="@dimen/_14ssp"
                     />
                 <TextView
-                    android:layout_width="@dimen/_90sdp"
+                    android:layout_width="@dimen/_80sdp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_3sdp"
                     android:id="@+id/tv_post"
-                    android:textSize="@dimen/_14ssp"
+                    android:textSize="@dimen/_16ssp"
                     android:layout_marginLeft="@dimen/_6sdp"
                     android:gravity="center"
                     android:textColor="@color/black"
                     />
                 <TextView
-                    android:layout_width="@dimen/_90sdp"
+                    android:layout_width="@dimen/_80sdp"
                     android:textColor="@color/white3"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_3sdp"

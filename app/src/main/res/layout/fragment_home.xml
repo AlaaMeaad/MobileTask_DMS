@@ -13,7 +13,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/main.appbar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_200sdp"
+        android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:fitsSystemWindows="true"
         android:background="@color/whit"
@@ -35,7 +35,7 @@
     >
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_220sdp"
+                android:layout_height="wrap_content"
                 android:id="@+id/tv_profile"
 
                 >
@@ -45,7 +45,9 @@
                     android:id="@+id/iv_image"
                     android:layout_width="@dimen/_120sdp"
                     android:layout_height="@dimen/_120sdp"
-                    android:layout_margin="@dimen/_14sdp"
+                    android:layout_marginLeft="@dimen/_14sdp"
+                    android:layout_marginRight="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/_18sdp"
                     android:src="@color/white"
                     />
                 <TextView
@@ -54,7 +56,7 @@
                     android:id="@+id/tv_name"
                     android:hint="Alaa"
                     android:layout_marginTop="@dimen/_35sdp"
-                    android:textSize="22dp"
+                    android:textSize="@dimen/_20ssp"
                     android:layout_marginRight="@dimen/_6sdp"
                     android:layout_toRightOf="@id/iv_image"
                     android:textColor="@color/black"
@@ -66,7 +68,7 @@
                     android:layout_below="@id/tv_name"
                     android:layout_toRightOf="@id/iv_image"
                     android:textColor="@color/white3"
-                    android:textSize="18dp"
+                    android:textSize="@dimen/_17ssp"
                     android:layout_marginTop="5dp"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -76,7 +78,7 @@
                     android:layout_below="@id/city"
                     android:layout_toRightOf="@id/iv_image"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:textSize="@dimen/_9ssp"
+                    android:textSize="@dimen/_12sdp"
                     android:layout_marginRight="@dimen/_18sdp"/>
             </RelativeLayout>
 
