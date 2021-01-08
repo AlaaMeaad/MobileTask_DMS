@@ -71,7 +71,7 @@ public class HomeFragment extends BaseFragment implements PostsAdapter.PostsAdap
     private DataManagerImpl dataManager;
     CircleImageView circleImageView;
     View mRootView;
-    TextView tv_name, tv_city , tv_bio , tv_post , tv_folowes , tv_following;
+    TextView tv_name, tv_city , tv_bio , tv_post , tv_folowes , tv_following , txxx;
     public String url ;
     Toolbar toolbar ;
 
@@ -95,7 +95,7 @@ public class HomeFragment extends BaseFragment implements PostsAdapter.PostsAdap
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
          mRootView = inflater.inflate(R.layout.fragment_home, container, false);
-//        postsFragmentRvPosts = mRootView.findViewById(R.id.posts_fragment_rv_posts);
+        postsFragmentRvPosts = mRootView.findViewById(R.id.posts_fragment_rv_posts);
         circleImageView = mRootView.findViewById(R.id.iv_image);
         tv_city = mRootView.findViewById(R.id.city);
         tv_bio = mRootView.findViewById(R.id.bio);
@@ -103,11 +103,11 @@ public class HomeFragment extends BaseFragment implements PostsAdapter.PostsAdap
         tv_post = mRootView.findViewById(R.id.tv_post);
         tv_following = mRootView.findViewById(R.id.tv_folowing);
         tv_folowes = mRootView.findViewById(R.id.tv_followers);
+
         dataManager = new DataManagerImpl();
-//        toolbar = mRootView.findViewById(R.id.toolbar);
         getprofile();
 
-//initRecyclerView();
+        initRecyclerView();
         return mRootView;
 
     }
@@ -117,6 +117,7 @@ public class HomeFragment extends BaseFragment implements PostsAdapter.PostsAdap
         postsFragmentRvPosts.setLayoutManager(gridLayoutManager);
         postAdapter = new PostsAdapter(getActivity(), getActivity(), postHome , this);
         postsFragmentRvPosts.setAdapter(postAdapter);
+        postsFragmentRvPosts.setNestedScrollingEnabled(false);
         getAllProperty();
 
     }
@@ -127,6 +128,7 @@ public class HomeFragment extends BaseFragment implements PostsAdapter.PostsAdap
         dataManager.getProfile(new RetrofitCallback() {
             @Override
             public void onSuccess(Object response) {
+//                HelperMethod.dismissProgressDialog();
                 Profile profile = (Profile) response;
                 tv_name.setText(profile.getData().getFullName());
                 HelperMethod.onLoadImageFromUrl(circleImageView, profile.getData().getProfilePicture(), getContext());
